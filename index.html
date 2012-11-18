@@ -51,55 +51,59 @@
             </div>         
         </header >
         <article id="content">
-            <div id="flag"></div>
-                    <div id="label">
-                        DESCRIPTION
-                    </div>
-                    
-                    <div id="label">
-                        ABILITES
-                    </div>
-                    
-                    <div id="label">
-                        ATTRIBUTES
-                    </div>
-                    <div id="description"> 
-                        <table>
-                            <tr>
-                                <td class = "indent">
-                                    <label>Align</label>
-                                </td>
-                                <td>
-                                <select id = "align" class = "small_label">
-                                    <option value = "1">one</option>
-                                    <option value = "2">two</option>
-                                    <option value = "3">three</option>
-                                    <option value = "4">four</option>
-                                </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class = "indent">
-                                    <label>Gander</label>
-                                </td>
-                                <td>
-                                <select id = "gander" class = "small_label">
-                                    <option value = "male">male</option>
-                                    <option value = "female">female</option>
-                                </select>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="indent">
-                                    <label>Hight</label>
-                                </td>
-                                <td>
-                                    <input type="number" value="0" name="character_description_hgt_foot" min="0" class="description_hgt"><label>'</label>
-                                    <input type="number" value="0" name="character_description_hgt_cal" min="0" max="11" class="description_hgt_cal"><label>''</label>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>        
+            <form>
+                <div id="flag"></div>
+                <fieldset id="description">
+                        <div id="label">
+                            DESCRIPTION
+                        </div>
+                        
+                        <div id="label">
+                            ABILITES
+                        </div>
+                        
+                        <div id="label">
+                            ATTRIBUTES
+                        </div>
+                        <div id="description"> 
+                            <table>
+                                <tr>
+                                    <td class = "indent">
+                                        <label>Align</label>
+                                    </td>
+                                    <td>
+                                    <select id = "align" class = "small_label">
+                                        <option value = "1">one</option>
+                                        <option value = "2">two</option>
+                                        <option value = "3">three</option>
+                                        <option value = "4">four</option>
+                                    </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class = "indent">
+                                        <label>Gander</label>
+                                    </td>
+                                    <td>
+                                    <select id = "gander" class = "small_label">
+                                        <option value = "male">male</option>
+                                        <option value = "female">female</option>
+                                    </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="indent">
+                                        <label>Hight</label>
+                                    </td>
+                                    <td>
+                                        <input type="number" value="0" name="character_description_hgt_foot" min="0" class="description_hgt"><label>'</label>
+                                        <input type="number" value="0" name="character_description_hgt_cal" min="0" max="11" class="description_hgt_cal"><label>''</label>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>  
+                        </fieldset> 
+                    </form>     
         </article>
     </div>
     <footer id="footer">
