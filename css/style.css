@@ -237,6 +237,7 @@ td { vertical-align: top; }
 	margin-left: -240px;
 	height: 163px;
 	width: 940px;
+	z-index: 1;
 }
 
 #content {
@@ -271,7 +272,6 @@ td { vertical-align: top; }
 nav
 {
 	position: absolute;
-	display: list-item;
 	margin: 160px 240px;
 	width: 450px;
 	height: 1px;
@@ -282,29 +282,33 @@ nav
 
 nav ul
 {
+	position: relative;
 	text-align: center;
 	width: 14em;
 	list-style-type: none;
-	margin: 50px 128px;
+	margin: -50px 65px;
+	z-index: -10;
+	opacity: 0; 
 }
 
 nav a:link, nav a:visited
 {
-	position:absolute;
-	display: block;
-	width: 100%;
+	background-image: url("../img/save_label.png");
+	background-repeat:no-repeat;
+	height:25px;
+	width: 316px;
+	display: block;	
 	font-weight: bold;
 	line-height: 2.5em;
 	text-decoration: none;
 	color: #fff;
-	border-radius: 4px;
 	outline: 0 none;
+	padding-bottom: 12px; 
 }
 
 nav a:hover, nav a:focus
 {
 	color: #fff;
-	background-color: #543;
 	text-shadow: 0 0 4px #fff;
 	box-shadow: inset 0 2px 2px rgba(0,0,0,0.2);
 }
@@ -319,7 +323,15 @@ nav, nav *
 	transition: all 600ms ease;
 }
 
-nav:hover
+nav:hover #test
+{
+	height: inherit;
+	z-index: 100;
+	margin-top: 30px;
+	opacity: 1; 
+}
+
+nav:hover 
 {
 	height: 131px;
 	z-index: 0;
