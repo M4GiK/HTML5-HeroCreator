@@ -32,7 +32,7 @@
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
        For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.0.6.min.js"></script>
-
+  
 </head>
 
 <body>
@@ -43,14 +43,24 @@
     </header>
     <div id="main" role="main">
         <header id="background">
-            <div id="banner">
-                <div id="logo"></div>
+            <div id="banner">   
+                
+                    <nav>
+                        <div id="logo"></div>   
+                        <ul>
+                            <li><a href="#">Save</a></li>
+                            <li><a href="#">Load</a></li>
+                        </ul>
+                    </nav>
+                                         
                 <div id="input_name">
                         <input type="text" class="value_label" id="name" name="name" placeholder="type your name..." required>
                 </div>
             </div>         
         </header >
         <article id="content">
+            
+                                    
             <form>
                 <div id="flag"></div>
                 <fieldset id="description">
@@ -117,7 +127,10 @@
   <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
+  
+  <!--   My JavaScript   -->
+  <script type="text/javascript" src="js/mylibs/panelSaveLoad.js"></script>
+  <!-- end my JavaScript -->
 
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
