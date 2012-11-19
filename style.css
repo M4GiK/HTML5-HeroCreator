@@ -199,39 +199,23 @@ table { border-collapse: collapse; border-spacing: 0; }
 td { vertical-align: top; }
 
 
-/* =============================================================================
-   User styles 
+/* ==|== primary styles =====================================================
+   Author: Michał Szczygieł 
    ========================================================================== */
 
-body {
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
-    background-position: center top;
-    height: 602px;
-}
-
-input, select, textarea {
-/*    border: 0;*/
-}
+/*----------------------------START-LAYOUT------------------------------------*/
+#main {}
 
 #background {
-    background-image: url("../img/logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 70px;
-    height: 522px;
-    width: 940px;
-    margin: 0 auto;
-    -moz-box-shadow: 0 0 15px 5px #000;
-    -webkit-box-shadow: 0 0 15px 5px #000;
-    box-shadow: 0 0 15px 5px #000;
-}
-
-#main {
-    background-color: white;
-    min-height: 800px;
-    width: 940px;
-    margin: 0 auto;
+	background-image: url("../img/background.jpg");
+	background-repeat: no-repeat;
+	background-position: center top;
+	height: 602px;
+/*	width: 1686px;*/
+	
+	/*-moz-box-shadow: inset 0 -45px 25px 25px #000;
+	-webkit-box-shadow: inset 0 -45px  25px 25px #000;
+	box-shadow: inset 0 -45px 25px 25px #000;*/
 }
 
 #banner {
@@ -248,13 +232,17 @@ input, select, textarea {
 
 #logo {
 	position: absolute;
-/*	background-image: url("../img/logo.png");*/
+	background-image: url("../img/logo.png");
 	margin-top: 70px;
 	height: 163px;
 	width: 940px;
 }
 
 #content {
+	background-color: white;
+	min-height: 800px;
+	width: 940px;	
+	margin: -80px auto;
 }
 
 #footer {
@@ -279,25 +267,13 @@ input, select, textarea {
 /*-----------------------------END-LAYOUT-------------------------------------*/
 
 /*----------------------------START-INPUT-------------------------------------*/
-fieldset {
-    display: inline;
-}
-
-fieldset#description {
-    width: 20em;
-}
-
-fieldset#experience {
-    width: 20em;
-}
-
 #input_name {
 	position: absolute;
 	background-image: url("../img/name_label.png");
 	background-repeat: no-repeat;
 	margin: 468px 68px;
 	height: 38px;
-	width: 803px;
+	width: 803px;	
 }
 
 #label {
@@ -308,7 +284,7 @@ fieldset#experience {
 	height: 27px;
 	width: 219px;
 	margin-top: 10px;
-	margin-left: 25px;
+	margin-left: 25px;		
 	padding-top: 8px;
 	text-align: center;
 	color: white;

@@ -4,156 +4,270 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!-- Consider adding an manifest.appcache: h5bp.com/d/Offline -->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-    
-  <!-- Use the .htaccess and remove these lines to avoid edge case issues.
-       More info: h5bp.com/b/378 -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+	<!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
 
-  <title>Hero Creator</title>
-  <meta name="description" content="Interactive character sheet for Dungeons & Dragons Next edition">
-  <meta name="author" content="Michał Szczygieł & Aleksander Śmierciak">
+		<!-- Use the .htaccess and remove these lines to avoid edge case issues.
+		More info: h5bp.com/b/378 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <!-- Mobile viewport optimized: j.mp/bplateviewport -->
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Hero Creator</title>
+		<meta name="description" content="Interactive character sheet for Dungeons & Dragons Next edition">
+		<meta name="author" content="Michał Szczygieł & Aleksander Śmierciak">
 
-  <!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
+		<!-- Mobile viewport optimized: j.mp/bplateviewport -->
+		<meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <!-- CSS: implied media=all -->
-  <!-- CSS concatenated and minified via ant build script-->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- end CSS-->
+		<!-- Place favicon.ico and apple-touch-icon.png in the root directory: mathiasbynens.be/notes/touch-icons -->
 
-  <!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
+		<!-- CSS: implied media=all -->
+		<!-- CSS concatenated and minified via ant build script-->
+		<link rel="stylesheet" href="css/style.css">
+		<!-- end CSS-->
 
-  <!-- All JavaScript at the bottom, except for Modernizr / Respond.
-       Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
-       For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
-  <script src="js/libs/modernizr-2.0.6.min.js"></script>
+		<!-- More ideas for your <head> here: h5bp.com/d/head-Tips -->
 
-</head>
+		<!-- All JavaScript at the bottom, except for Modernizr / Respond.
+		Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
+		For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
+		<script src="js/libs/modernizr-2.0.6.min.js"></script>
 
-<body>
+	</head>
 
-  <div id="container">
-    <header>
+	<body>
 
-    </header>
-    <div id="main" role="main">
-        <header id="background">
-            <div id="banner">
-                <div id="logo"></div>
-                <div id="input_name">
-                        <input type="text" class="value_label" id="name" name="name" placeholder="type your name..." required>
-                </div>
-            </div>         
-        </header >
-        <article id="content">
-            <form>
-                <div id="flag"></div>
-                <fieldset id="description">
-                        <div id="label">
-                            DESCRIPTION
-                        </div>
-                        
-                        <div id="label">
-                            ABILITES
-                        </div>
-                        
-                        <div id="label">
-                            ATTRIBUTES
-                        </div>
-                        <div id="description"> 
-                            <table>
-                                <tr>
-                                    <td class = "indent">
-                                        <label>Align</label>
-                                    </td>
-                                    <td>
-                                    <select id = "align" class = "small_label">
-                                        <option value = "1">one</option>
-                                        <option value = "2">two</option>
-                                        <option value = "3">three</option>
-                                        <option value = "4">four</option>
-                                    </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class = "indent">
-                                        <label>Gander</label>
-                                    </td>
-                                    <td>
-                                    <select id = "gander" class = "small_label">
-                                        <option value = "male">male</option>
-                                        <option value = "female">female</option>
-                                    </select>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td class="indent">
-                                        <label>Hight</label>
-                                    </td>
-                                    <td>
-                                        <input type="number" value="0" name="character_description_hgt_foot" min="0" class="description_hgt"><label>'</label>
-                                        <input type="number" value="0" name="character_description_hgt_cal" min="0" max="11" class="description_hgt_cal"><label>''</label>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>  
-                        </fieldset> 
-                    </form>     
-        </article>
-    </div>
-    <footer id="footer">
-        <div id="info">links</div>
-    </footer>
-  </div> <!--! end of #container -->
+		<header id="background">
+			<input name="character_name" class="value_label" type="text" form="character_sheet" id="name" style='text-transform: uppercase;' onBlur="this.value=this.value.toUpperCase()" placeholder="type your name..." required>
+		</header>
 
+		<div id="main" role="main">
+			<form name="character_sheet" onsubmit="return false">
+				<fieldset id="ac_hp">
+					<label for="ribbon_ac">Armor class</label>
+					<input name="ribbon_ac" readonly="">
+					<label for="ribbon_hp">Hit points</label>
+					<input name="ribbon_hp_current" type="number">
+					/
+					<input name="ribbon_hp" readonly="">
+				</fieldset>
+				<fieldset id="description">
+					<legend>
+						Description
+					</legend>
+					<label for="description_align">Align</label>
+					<select id="description_align" class="small_label">
+						<option value="1">Unaligned</option>
+						<option value="2">Lawful Good</option>
+						<option value="3">Neutral Good</option>
+						<option value="4">Chaotic Good</option>
+						<option value="5">Lawful Neutral</option>
+						<option value="6">Neutral</option>
+						<option value="7">Chaotic Neutral</option>
+						<option value="8">Lawful Evil</option>
+						<option value="9">Neutral Evil</option>
+						<option value="10">Chaotic Evil</option>
+					</select>
+					<br />
+					<label for="description_hgt_ft">Height</label>
+					<input name="description_hgt_ft" class="description_hgt_ft" type="number" value="6" min="0" >
+					'
+					<input name="description_hgt_in" class="description_hgt_in" type="number" value="0" min="0" max="11" >
+					''
+					<br />
+					<label for="description_eye">Eye</label>
+					<input name="description_eye" class="description_eye" type="text">
+					<br />
+					<label for="description_size">Size</label>
+					<input name="description_size" class="description_size" type="text">
+					<br />
+					<label for="description_gender">Gender</label>
+					<select id="description_gender" class="small_label">
+						<option value="unspecified">Unspecified</option>
+						<option value="male">Male</option>
+						<option value="female">Female</option>
+					</select>
+					<br />
+					<label for="description_wgt">Wgt</label>
+					<input name="description_wgt" class="description_wgt" type="number" value="0" min="0">
+					<br />
+					<label for="description_hair">Hair</label>
+					<input name="description_hair" class="description_hair" type="text">
+					<br />
+					<label for="description_age">Age</label>
+					<input name="description_age" class="description_age" type="number">
+				</fieldset>
+				<fieldset id="experience">
+					<legend>
+						Experience points
+					</legend>
+					<label for="experience_lvl">Level</label>
+					<input name="experience_lvl" class="experience_level" type="number">
+					<label for="experience_xp">XP</label>
+					<input name="experience_xp" class="experience_xp" type="number">
+					<label for="experience_nl">NL</label>
+					<input name="experience_nl" class="experience_nl" type="number">
+				</fieldset>
+				<fieldset id="abilities">
+					<legend>
+						Abilities
+					</legend>
+					<label for="abilities_str">STR</label>
+					<input name="abilities_str" class="abilities_str" type="number">
+					<label for="abilities_str">DEX</label>
+					<input name="abilities_dex" class="abilities_dex" type="number">
+					<label for="abilities_str">CON</label>
+					<input name="abilities_con" class="abilities_con" type="number">
+					<label for="abilities_str">INT</label>
+					<input name="abilities_int" class="abilities_int" type="number">
+					<label for="abilities_str">WIS</label>
+					<input name="abilities_wis" class="abilities_wis" type="number">
+					<label for="abilities_str">CHA</label>
+					<input name="abilities_cha" class="abilities_cha" type="number">
+				</fieldset>
+				<fieldset id="attributes">
+					<legend>
+						Attributes
+					</legend>
+					<label for="attributes_speed">Speed</label>
+					<input name="attributes_speed" class="attributes_speed" type="number">
+					<label for="attributes_hitdice">Hitdice</label>
+					<input name="attributes_hitdice" class="attributes_hitdice" type="number">
+					<label for="attributes_initiative">Initiative</label>
+					<input name="attributes_initiative" class="attributes_initiative" type="number">
+					<label for="attributes_vision">Vision</label>
+					<input name="attributes_vision" class="attributes_vision" type="number">
+					<label for="attributes_size">Size</label>
+					<input name="attributes_size" class="attributes_size" type="number">
+				</fieldset>
+				<fieldset id="languages">
+					<legend>
+						Languages
+					</legend>
+					<textarea name="languages" class="description_age"></textarea>
+				</fieldset>
+				<fieldset id="attacks">
+					<legend>
+						Attacks
+					</legend>
+					<label for="attacks_weapon1">Weapon</label>
+					<input name="attacks_weapon1" class="attacks_weapon1" type="text">
+					<input name="attacks_atk1" class="attacks_atk1" type="number">
+					<input name="attacks_dmg1" class="attacks_dmg1" type="number">
+					<input name="attacks_weapon2" class="attacks_weapon2" type="text">
+					<input name="attacks_atk2" class="attacks_atk2" type="number">
+					<input name="attacks_dmg2" class="attacks_dmg2" type="number">
+					<input name="attacks_weapon3" class="attacks_weapon3" type="text">
+					<input name="attacks_atk3" class="attacks_atk3" type="number">
+					<input name="attacks_dmg3" class="attacks_dmg3" type="number">
+				</fieldset>
+				<fieldset>
+					<legend>
+						Class features
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Racial traits
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Skills
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Feats
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Spell notes
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Prepared spells
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Maneuvers
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Spellbook
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Additional character notes
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Equipment and treasure
+					</legend>
+				</fieldset>
+				<fieldset>
+					<legend>
+						Playtest notes
+					</legend>
+				</fieldset>
+			</form>
+		</div>
 
-  <!-- JavaScript at the bottom for fast page loading -->
+		<footer id="footer">
+			links
+		</footer>
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
-  <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
+		<!-- JavaScript at the bottom for fast page loading -->
 
+		<!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+		<script>
+			window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')
+		</script>
 
-  <!-- scripts concatenated and minified via ant build script-->
-  <script defer src="js/plugins.js"></script>
-  <script defer src="js/script.js"></script>
-  <!-- end scripts-->
+		<!-- scripts concatenated and minified via ant build script-->
+		<script defer src="js/plugins.js"></script>
+		<script defer src="js/script.js"></script>
+		<!-- end scripts-->
 
-	
-  <!-- Change UA-XXXXX-X to be your site's ID -->
-  <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
-    Modernizr.load({
-      load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
-    });
-  </script>
-  
-  <script type="text/javascript">
-      WebFontConfig = {
-        google: { families: [ 'Condiment::latin,latin-ext' ] }
-      };
-      (function() {
-        var wf = document.createElement('script');
-        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
-          '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
-        wf.type = 'text/javascript';
-        wf.async = 'true';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(wf, s);
-      })(); 
-  </script>
+		<!-- Change UA-XXXXX-X to be your site's ID -->
+		<script>
+			window._gaq = [['_setAccount', 'UAXXXXXXXX1'], ['_trackPageview'], ['_trackPageLoadTime']];
+			Modernizr.load({
+				load : ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
+			});
+		</script>
 
-  <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
-       chromium.org/developers/how-tos/chrome-frame-getting-started -->
-  <!--[if lt IE 7 ]>
-    <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
-    <script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
-  <![endif]-->
-  
-</body>
+		<script type="text/javascript">
+			WebFontConfig = {
+				google : {
+					families : ['Condiment::latin,latin-ext']
+				}
+			};
+			(function() {
+				var wf = document.createElement('script');
+				wf.src = ('https:' == document.location.protocol ? 'https' : 'http') + '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+				wf.type = 'text/javascript';
+				wf.async = 'true';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(wf, s);
+			})();
+		</script>
+
+		<!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
+		chromium.org/developers/how-tos/chrome-frame-getting-started -->
+		<!--[if lt IE 7 ]>
+		<script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.3/CFInstall.min.js"></script>
+		<script>window.attachEvent('onload',function(){CFInstall.check({mode:'overlay'})})</script>
+		<![endif]-->
+
+	</body>
 </html>
