@@ -316,16 +316,15 @@ nav a:hover, nav a:focus
 /* hovering */
 nav, nav *
 {
-	-webkit-transition: all 600ms ease;
-	-moz-transition: all 600ms ease;
-	-ms-transition: all 600ms ease;
-	-o-transition: all 600ms ease;
-	transition: all 600ms ease;
+	-webkit-transition: all 600ms ease-out ;
+	-moz-transition: all 600ms ease-out ;
+	-ms-transition: all 600ms ease-out ;
+	-o-transition: all 600ms ease-out ;
+	transition: all 600ms ease-out ;
 }
 
-nav:hover #test
+nav:hover #save_load
 {
-	height: inherit;
 	z-index: 100;
 	margin-top: 30px;
 	opacity: 1; 
