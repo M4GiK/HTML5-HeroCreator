@@ -204,60 +204,46 @@ td { vertical-align: top; }
    ========================================================================== */
 
 body {
-    background-image: url("../img/background.jpg");
-    background-repeat: no-repeat;
-    background-position: center top;
+    background: #000000 url("../img/background.jpg") no-repeat center top;
     height: 602px;
 }
 
-input, select, textarea {
-/*    border: 0;*/
-}
-
-#background {
-    background-image: url("../img/logo.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    margin-top: 70px;
+body header {
+    background: url("../img/logo.png") no-repeat center;
+    
     height: 522px;
     width: 940px;
+    
     margin: 0 auto;
+    
     -moz-box-shadow: 0 0 15px 5px #000;
     -webkit-box-shadow: 0 0 15px 5px #000;
     box-shadow: 0 0 15px 5px #000;
+    
+	position: relative;
+    z-index: 100;
 }
 
-#main {
+div#main {
     background-color: white;
+    
     min-height: 800px;
     width: 940px;
+    
     margin: 0 auto;
-}
-
-#banner {
-	position: relative;
-	background-image: url("../img/banner.jpg");
-	margin: 0 auto;
-	height: 522px;
-	width: 940px;
-	
-	-moz-box-shadow: 0 0 15px 5px #000;
-	-webkit-box-shadow: 0 0 15px 5px #000;
-	box-shadow: 0 0 15px 5px #000;
+    
+    z-index: 10;
 }
 
 #logo {
-	position: absolute;
 /*	background-image: url("../img/logo.png");*/
-	margin-top: 70px;
 	height: 163px;
 	width: 940px;
+	
+	margin-top: 70px;
 }
 
-#content {
-}
-
-#footer {
+body footer {
 	background-image: url("../img/footer.jpg");
 	margin: 0 auto;
 	height: 106px;
@@ -266,6 +252,7 @@ input, select, textarea {
 	-moz-box-shadow: 0 0 15px 5px #000;
 	-webkit-box-shadow: 0 0 15px 5px #000;
 	box-shadow: 0 0 15px 5px #000;
+    z-index: 100;
 }
 
 #flag {
@@ -279,6 +266,11 @@ input, select, textarea {
 /*-----------------------------END-LAYOUT-------------------------------------*/
 
 /*----------------------------START-INPUT-------------------------------------*/
+
+input, select, textarea {
+/*    border: 0;*/
+}
+
 fieldset {
     display: inline;
 }
@@ -292,41 +284,64 @@ fieldset#experience {
 }
 
 #input_name {
-	position: absolute;
-	background-image: url("../img/name_label.png");
-	background-repeat: no-repeat;
+	background: url("../img/name_label.png") no-repeat;
 	margin: 468px 68px;
 	height: 38px;
 	width: 803px;
+	position: absolute;
 }
 
-#label {
-	background-image: url("../img/small_label.png");
-	background-repeat: no-repeat;
+fieldset legend {
+	-o-background-size: auto 90%;
+	-webkit-background-size: auto 90%;
+	background-size: auto 90%;
+
+	
+	background-position: left, center, right;
+	background-repeat: no-repeat, repeat-x, no-repeat;
+	
+	-webkit-background-clip: border-box, content-box, border-box;
+	-moz-background-clip: border-box, content-box, border-box;
+	background-clip: border-box, content-box, border-box;
+	
+	color: white;
 	display: inline-block;
 	float: left;
 	height: 27px;
 	width: 219px;
 	margin-top: 10px;
-	margin-left: 25px;
-	padding-top: 8px;
-	text-align: center;
-	color: white;
+	padding: 8px 10px 0px 10px;
 	
+	line-height: 1.5em;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+
+fieldset.label_small legend {
+	background-image: url("../img/titles/LegendSLeft.svg"), url("../img/label_small_middle.png"), url("../img/titles/LegendSRight.svg");
+}
+
+fieldset.label_small_crossed legend {
+	background-image: url("../img/label_small_crossed_left.png"), url("../img/label_small_crossed_middle.png"), url("../img/label_small_crossed_right.png");
+}
+
+fieldset.label_big_crossed legend {
+	background-image: url("../img/label_big_crossed_left.png"), url("../img/label_big_crossed_middle.png"), url("../img/label_big_crossed_right.png");
 }
 
 #description {
-	margin-left: 25px;
 	display: inline-block;
+	margin-left: 25px;
 }
 .value_label {
 	background-color: #050708;
-	text-align: center;
+	border: 0;
+	color: white;
+	width: 20em;
 	margin-top: 8px;
 	margin-left: 275px;
-	color: white;
-	border: 0;
-	width: 20em;
+	text-align: center;
 }
 
 .small_label {

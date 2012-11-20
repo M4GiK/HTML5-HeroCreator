@@ -39,12 +39,12 @@
 
 	<body>
 
-		<header id="background">
+		<header role="banner">
 			<input name="character_name" class="value_label" type="text" form="character_sheet" id="name" style='text-transform: uppercase;' onBlur="this.value=this.value.toUpperCase()" placeholder="type your name..." required>
 		</header>
 
 		<div id="main" role="main">
-			<form name="character_sheet" onsubmit="return false">
+			<form name="character_sheet" role="form" onsubmit="return false">
 				<fieldset id="ac_hp">
 					<label for="ribbon_ac">Armor class</label>
 					<input name="ribbon_ac" readonly="">
@@ -53,7 +53,7 @@
 					/
 					<input name="ribbon_hp" readonly="">
 				</fieldset>
-				<fieldset id="description">
+				<fieldset id="description" class="label_small">
 					<legend>
 						Description
 					</legend>
@@ -99,7 +99,7 @@
 					<label for="description_age">Age</label>
 					<input name="description_age" class="description_age" type="number">
 				</fieldset>
-				<fieldset id="experience">
+				<fieldset id="experience" class="label_small">
 					<legend>
 						Experience points
 					</legend>
@@ -110,7 +110,7 @@
 					<label for="experience_nl">NL</label>
 					<input name="experience_nl" class="experience_nl" type="number">
 				</fieldset>
-				<fieldset id="abilities">
+				<fieldset id="abilities" class="label_small">
 					<legend>
 						Abilities
 					</legend>
@@ -127,7 +127,7 @@
 					<label for="abilities_str">CHA</label>
 					<input name="abilities_cha" class="abilities_cha" type="number">
 				</fieldset>
-				<fieldset id="attributes">
+				<fieldset id="attributes" class="label_small">
 					<legend>
 						Attributes
 					</legend>
@@ -142,13 +142,13 @@
 					<label for="attributes_size">Size</label>
 					<input name="attributes_size" class="attributes_size" type="number">
 				</fieldset>
-				<fieldset id="languages">
+				<fieldset id="languages" class="label_small">
 					<legend>
 						Languages
 					</legend>
 					<textarea name="languages" class="description_age"></textarea>
 				</fieldset>
-				<fieldset id="attacks">
+				<fieldset id="attacks" class="label_small">
 					<legend>
 						Attacks
 					</legend>
@@ -163,57 +163,57 @@
 					<input name="attacks_atk3" class="attacks_atk3" type="number">
 					<input name="attacks_dmg3" class="attacks_dmg3" type="number">
 				</fieldset>
-				<fieldset>
+				<fieldset id="class_features" class="label_big_crossed">
 					<legend>
 						Class features
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="racial_traits" class="label_big_crossed">
 					<legend>
 						Racial traits
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="skills" class="label_big_crossed">
 					<legend>
 						Skills
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="feats" class="label_small_crossed">
 					<legend>
 						Feats
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="spell_notes" class="label_small_crossed">
 					<legend>
 						Spell notes
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="prepared_spells" class="label_small_crossed">
 					<legend>
 						Prepared spells
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="maneuvers" class="label_small_crossed">
 					<legend>
 						Maneuvers
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="spellbook" class="label_small_crossed">
 					<legend>
 						Spellbook
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="character_notes" class="label_big_crossed">
 					<legend>
 						Additional character notes
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="equipment" class="label_big_crossed">
 					<legend>
 						Equipment and treasure
 					</legend>
 				</fieldset>
-				<fieldset>
+				<fieldset id="playtest_notes" class="label_big_crossed">
 					<legend>
 						Playtest notes
 					</legend>
@@ -221,8 +221,12 @@
 			</form>
 		</div>
 
-		<footer id="footer">
-			links
+		<footer role="contentinfo">
+			Hero Creator<br />
+			an interactive HTML5-based character sheet<br />
+			for Dungeons and Dragons Next edition<br />
+			based on beta content provided for free by Wizards of the Coast<br />
+			This page is for educational purposes only.
 		</footer>
 
 		<!-- JavaScript at the bottom for fast page loading -->
