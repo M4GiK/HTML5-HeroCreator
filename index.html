@@ -40,192 +40,285 @@
 	<body>
 
 		<header role="banner">
+			<nav>
+				<div id="logo"></div>
+				<ul id="save_load">
+					<li>
+						<a href="#">Save</a>
+					</li>
+					<li>
+						<a href="#">Load</a>
+					</li>
+				</ul>
+			</nav>
 			<input name="character_name" class="value_label" type="text" form="character_sheet" id="name" style='text-transform: uppercase;' onBlur="this.value=this.value.toUpperCase()" placeholder="type your name..." required>
 		</header>
 
 		<div id="main" role="main">
 			<form name="character_sheet" role="form" onsubmit="return false">
-				<fieldset id="ribbon">
-					<label for="ribbon_ac">Armor class</label>
-					<input name="ribbon_ac" readonly="">
-					<label for="ribbon_hp">Hit points</label>
-					<input name="ribbon_hp_current" type="number">
-					/
-					<input name="ribbon_hp" readonly="">
-				</fieldset>
-				<fieldset id="description" class="label_small">
-					<legend>
-						Description
-					</legend>
-					<label for="description_align">Align</label>
-					<select id="description_align" class="small_label">
-						<option value="1">Unaligned</option>
-						<option value="2">Lawful Good</option>
-						<option value="3">Neutral Good</option>
-						<option value="4">Chaotic Good</option>
-						<option value="5">Lawful Neutral</option>
-						<option value="6">Neutral</option>
-						<option value="7">Chaotic Neutral</option>
-						<option value="8">Lawful Evil</option>
-						<option value="9">Neutral Evil</option>
-						<option value="10">Chaotic Evil</option>
-					</select>
-					<br />
-					<label for="description_hgt_ft">Height</label>
-					<input name="description_hgt_ft" class="description_hgt_ft" type="number" value="6" min="0" >
-					'
-					<input name="description_hgt_in" class="description_hgt_in" type="number" value="0" min="0" max="11" >
-					''
-					<br />
-					<label for="description_eye">Eye</label>
-					<input name="description_eye" class="description_eye" type="text">
-					<br />
-					<label for="description_size">Size</label>
-					<input name="description_size" class="description_size" type="text">
-					<br />
-					<label for="description_gender">Gender</label>
-					<select id="description_gender" class="small_label">
-						<option value="unspecified">Unspecified</option>
-						<option value="male">Male</option>
-						<option value="female">Female</option>
-					</select>
-					<br />
-					<label for="description_wgt">Wgt</label>
-					<input name="description_wgt" class="description_wgt" type="number" value="0" min="0">
-					<br />
-					<label for="description_hair">Hair</label>
-					<input name="description_hair" class="description_hair" type="text">
-					<br />
-					<label for="description_age">Age</label>
-					<input name="description_age" class="description_age" type="number">
-				</fieldset>
-				<fieldset id="experience" class="label_small">
-					<legend>
-						Experience points
-					</legend>
-					<label for="experience_lvl">Level</label>
-					<input name="experience_lvl" class="experience_level" type="number">
-					<label for="experience_xp">XP</label>
-					<input name="experience_xp" class="experience_xp" type="number">
-					<label for="experience_nl">NL</label>
-					<input name="experience_nl" class="experience_nl" type="number">
-				</fieldset>
-				<fieldset id="abilities" class="label_small">
-					<legend>
-						Abilities
-					</legend>
-					<label for="abilities_str">STR</label>
-					<input name="abilities_str" class="abilities_str" type="number">
-					<label for="abilities_str">DEX</label>
-					<input name="abilities_dex" class="abilities_dex" type="number">
-					<label for="abilities_str">CON</label>
-					<input name="abilities_con" class="abilities_con" type="number">
-					<label for="abilities_str">INT</label>
-					<input name="abilities_int" class="abilities_int" type="number">
-					<label for="abilities_str">WIS</label>
-					<input name="abilities_wis" class="abilities_wis" type="number">
-					<label for="abilities_str">CHA</label>
-					<input name="abilities_cha" class="abilities_cha" type="number">
-				</fieldset>
-				<fieldset id="attributes" class="label_small">
-					<legend>
-						Attributes
-					</legend>
-					<label for="attributes_speed">Speed</label>
-					<input name="attributes_speed" class="attributes_speed" type="number">
-					<label for="attributes_hitdice">Hitdice</label>
-					<input name="attributes_hitdice" class="attributes_hitdice" type="number">
-					<label for="attributes_initiative">Initiative</label>
-					<input name="attributes_initiative" class="attributes_initiative" type="number">
-					<label for="attributes_vision">Vision</label>
-					<input name="attributes_vision" class="attributes_vision" type="number">
-					<label for="attributes_size">Size</label>
-					<input name="attributes_size" class="attributes_size" type="number">
-				</fieldset>
-				<fieldset id="languages" class="label_small">
-					<legend>
-						Languages
-					</legend>
-					<textarea name="languages" class="description_age"></textarea>
-				</fieldset>
-				<fieldset id="attacks" class="label_small">
-					<legend>
-						Attacks
-					</legend>
-					<label for="attacks_weapon1">Weapon</label>
-					<input name="attacks_weapon1" class="attacks_weapon1" type="text">
-					<input name="attacks_atk1" class="attacks_atk1" type="number">
-					<input name="attacks_dmg1" class="attacks_dmg1" type="number">
-					<input name="attacks_weapon2" class="attacks_weapon2" type="text">
-					<input name="attacks_atk2" class="attacks_atk2" type="number">
-					<input name="attacks_dmg2" class="attacks_dmg2" type="number">
-					<input name="attacks_weapon3" class="attacks_weapon3" type="text">
-					<input name="attacks_atk3" class="attacks_atk3" type="number">
-					<input name="attacks_dmg3" class="attacks_dmg3" type="number">
-				</fieldset>
-				<fieldset id="class_features" class="label_big_crossed">
-					<legend>
-						Class features
-					</legend>
-				</fieldset>
-				<fieldset id="racial_traits" class="label_big_crossed">
-					<legend>
-						Racial traits
-					</legend>
-				</fieldset>
-				<fieldset id="skills" class="label_big_crossed">
-					<legend>
-						Skills
-					</legend>
-				</fieldset>
-				<fieldset id="feats" class="label_small_crossed">
-					<legend>
-						Feats
-					</legend>
-				</fieldset>
-				<fieldset id="spell_notes" class="label_small_crossed">
-					<legend>
-						Spell notes
-					</legend>
-				</fieldset>
-				<fieldset id="prepared_spells" class="label_small_crossed">
-					<legend>
-						Prepared spells
-					</legend>
-				</fieldset>
-				<fieldset id="maneuvers" class="label_small_crossed">
-					<legend>
-						Maneuvers
-					</legend>
-				</fieldset>
-				<fieldset id="spellbook" class="label_small_crossed">
-					<legend>
-						Spellbook
-					</legend>
-				</fieldset>
-				<fieldset id="character_notes" class="label_big_crossed">
-					<legend>
-						Additional character notes
-					</legend>
-				</fieldset>
-				<fieldset id="equipment" class="label_big_crossed">
-					<legend>
-						Equipment and treasure
-					</legend>
-				</fieldset>
-				<fieldset id="playtest_notes" class="label_big_crossed">
-					<legend>
-						Playtest notes
-					</legend>
-				</fieldset>
+
+				<section>
+					<fieldset id="ribbon">
+						<label for="ribbon_ac">Armor class</label>
+						<input name="ribbon_ac" id="ribbon_ac" readonly="">
+						<label for="ribbon_hp">Hit points</label>
+						<input name="ribbon_hp_current" id="ribbon_hp_current" type="number">
+						/
+						<input name="ribbon_hp" id="ribbon_hp" readonly="">
+					</fieldset>
+
+					<fieldset id="description" class="label_small">
+						<legend>
+							Description
+						</legend>
+						<ul id="two_columns">
+							<li>
+								<label for="description_align">Align</label>
+								<select id="description_align">
+									<option value="" selected disabled>Unaligned</option>
+									<option value="2">Lawful Good</option>
+									<option value="3">Neutral Good</option>
+									<option value="4">Chaotic Good</option>
+									<option value="5">Lawful Neutral</option>
+									<option value="6">Neutral</option>
+									<option value="7">Chaotic Neutral</option>
+									<option value="8">Lawful Evil</option>
+									<option value="9">Neutral Evil</option>
+									<option value="10">Chaotic Evil</option>
+								</select>
+							</li>
+							<li>
+								<label for="description_race">Race</label>
+								<select id="description_race">
+									<option value="" selected disabled>Unspecified</option>
+									<option value="2">Dwarf</option>
+									<option value="3">Elf</option>
+									<option value="4">Halfling</option>
+									<option value="5">Human</option>
+								</select>
+							</li>
+							<li>
+								<label for="description_class">Class</label>
+								<select id="description_class">
+									<option value="" selected disabled>Unspecified</option>
+									<option value="2">Dwarf</option>
+									<option value="3">Elf</option>
+									<option value="4">Halfling</option>
+									<option value="5">Human</option>
+								</select>
+							</li>
+							<li>
+								<label for="description_gender">Gender</label>
+								<select id="description_gender">
+									<option value="" selected disabled>Unspecified</option>
+									<option value="male">Male</option>
+									<option value="female">Female</option>
+								</select>
+							</li>
+							<li>
+								<label for="description_eyes">Eyes</label>
+								<input name="description_eyes" id="description_eyes" type="text">
+							</li>
+							<li>
+								<label for="description_hair">Hair</label>
+								<input name="description_hair" id="description_hair" type="text">
+							</li>
+							<li>
+								<label for="description_hgt_ft">Height</label>
+								<input name="description_hgt_ft" id="description_hgt_ft" type="number" value="6" min="0" >
+								'
+								<input name="description_hgt_in" id="description_hgt_in" type="number" value="0" min="0" max="11" >
+								''
+							</li>
+							<li>
+								<label for="description_weight">Weight</label>
+								<input name="description_weight" id="description_weight" type="number" value="0" min="0">
+							</li>
+						</ul>
+						<!-- Specialty -->
+						<!-- Background -->
+					</fieldset>
+
+					<fieldset id="experience" class="label_small">
+						<legend>
+							Experience points
+						</legend>
+						<label for="experience_level">Level</label>
+						<input name="experience_level" id="experience_level" type="number">
+						<label for="experience_xp">XP</label>
+						<input name="experience_xp" id="experience_xp" type="number">
+						<label for="experience_nl">NL</label>
+						<input name="experience_nl" id="experience_nl" type="number">
+					</fieldset>
+					<fieldset id="abilities" class="label_small">
+						<legend>
+							Abilities
+						</legend>
+						<ul>
+							<li>
+								<label for="abilities_str">STR</label>
+								<input name="abilities_str" id="abilities_str" type="number">
+							</li>
+							<li>
+								<label for="abilities_str">DEX</label>
+								<input name="abilities_dex" id="abilities_dex" type="number">
+							</li>
+							<li>
+								<label for="abilities_str">CON</label>
+								<input name="abilities_con" id="abilities_con" type="number">
+							</li>
+							<li>
+								<label for="abilities_str">INT</label>
+								<input name="abilities_int" id="abilities_int" type="number">
+							</li>
+							<li>
+								<label for="abilities_str">WIS</label>
+								<input name="abilities_wis" id="abilities_wis" type="number">
+							</li>
+							<li>
+								<label for="abilities_str">CHA</label>
+								<input name="abilities_cha" id="abilities_cha" type="number">
+							</li>
+						</ul>
+					</fieldset>
+					<fieldset id="attributes" class="label_small">
+						<legend>
+							Attributes
+						</legend>
+						<label for="attributes_speed">Speed</label>
+						<input name="attributes_speed" id="attributes_speed" type="number">
+						<label for="attributes_hitdice">Hitdice</label>
+						<input name="attributes_hitdice" id="attributes_hitdice" type="number">
+						<label for="attributes_initiative">Initiative</label>
+						<input name="attributes_initiative" id="attributes_initiative" type="number">
+						<label for="attributes_vision">Vision</label>
+						<input name="attributes_vision" id="attributes_vision" type="number">
+						<label for="attributes_size">Size</label>
+						<input name="attributes_size" id="attributes_size" type="number">
+					</fieldset>
+					<fieldset id="languages" class="label_small">
+						<legend>
+							Languages
+						</legend>
+						<textarea name="languages_text" id="languages_text"></textarea>
+					</fieldset>
+					<fieldset id="attacks" class="label_small">
+						<legend>
+							Attacks
+						</legend>
+						<ul>
+							<li>
+								<label for="attacks_weapon1">Weapon</label>
+								<label for="attacks_atk1">(Atk)</label>
+								<label for="attacks_dmg1">(Dmg)</label>
+							</li>
+							<li>
+								<input name="attacks_weapon1" id="attacks_weapon1" type="text">
+								(
+								<input name="attacks_atk1" id="attacks_atk1" type="number">
+								)
+								(
+								<input name="attacks_dmg1" id="attacks_dmg1" type="number">
+								)
+							</li>
+							<li>
+								<input name="attacks_weapon2" id="attacks_weapon2" type="text">
+								(
+								<input name="attacks_atk2" id="attacks_atk2" type="number">
+								)
+								(
+								<input name="attacks_dmg2" id="attacks_dmg2" type="number">
+								)
+							</li>
+							<li>
+								<input name="attacks_weapon3" id="attacks_weapon3" type="text">
+								(
+								<input name="attacks_atk3" id="attacks_atk3" type="number">
+								)
+								(
+								<input name="attacks_dmg3" id="attacks_dmg3" type="number">
+								)
+							</li>
+						</ul>
+					</fieldset>
+				</section>
+
+				<section>
+					<fieldset id="class_features" class="label_big_crossed">
+						<legend>
+							Class features
+						</legend>
+					</fieldset>
+					<fieldset id="racial_traits" class="label_big_crossed">
+						<legend>
+							Racial traits
+						</legend>
+					</fieldset>
+					<fieldset id="skills" class="label_big_crossed">
+						<legend>
+							Skills
+						</legend>
+					</fieldset>
+				</section>
+
+				<section>
+					<fieldset id="feats" class="label_small_crossed">
+						<legend>
+							Feats
+						</legend>
+					</fieldset>
+					<fieldset id="spell_notes" class="label_small_crossed">
+						<legend>
+							Spell notes
+						</legend>
+					</fieldset>
+					<fieldset id="prepared_spells" class="label_small_crossed">
+						<legend>
+							Prepared spells
+						</legend>
+					</fieldset>
+					<fieldset id="maneuvers" class="label_small_crossed">
+						<legend>
+							Maneuvers
+						</legend>
+					</fieldset>
+					<fieldset id="spellbook" class="label_small_crossed">
+						<legend>
+							Spellbook
+						</legend>
+					</fieldset>
+				</section>
+
+				<section>
+					<fieldset id="character_notes" class="label_big_crossed">
+						<legend>
+							Additional character notes
+						</legend>
+					</fieldset>
+					<fieldset id="equipment" class="label_big_crossed">
+						<legend>
+							Equipment and treasure
+						</legend>
+					</fieldset>
+					<fieldset id="playtest_notes" class="label_big_crossed">
+						<legend>
+							Playtest notes
+						</legend>
+					</fieldset>
+				</section>
+
 			</form>
 		</div>
 
 		<footer role="contentinfo">
-			Hero Creator<br />
-			an interactive HTML5-based character sheet<br />
-			for Dungeons and Dragons Next edition<br />
-			based on beta content provided for free by Wizards of the Coast.<br />
+			Hero Creator
+			<br />
+			an interactive HTML5-based character sheet
+			<br />
+			for Dungeons and Dragons Next edition
+			<br />
+			based on beta content provided for free by Wizards of the Coast.
+			<br />
 			This page is for educational purposes only.
 		</footer>
 
