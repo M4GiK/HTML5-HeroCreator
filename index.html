@@ -57,21 +57,26 @@
 		<div id="main" role="main">
 			<form name="character_sheet" role="form" onsubmit="return false">
 
-				<section>
+				<section id="first">
 					<fieldset id="ribbon">
-						<label for="ribbon_ac">Armor class</label>
-						<input name="ribbon_ac" id="ribbon_ac" readonly="">
-						<label for="ribbon_hp">Hit points</label>
-						<input name="ribbon_hp_current" id="ribbon_hp_current" type="number">
-						/
-						<input name="ribbon_hp" id="ribbon_hp" readonly="">
+						<ul>
+							<li>
+								<input name="ribbon_ac" id="ribbon_ac" readonly="">
+								<label for="ribbon_ac">Armor class</label>
+							</li>
+							<li>
+								<label for="ribbon_hp">Hit points</label>
+								<input name="ribbon_hp_current" id="ribbon_hp_current" type="number">
+								<input name="ribbon_hp" id="ribbon_hp" readonly="">
+							</li>
+						</ul>
 					</fieldset>
 
 					<fieldset id="description" class="label_small">
 						<legend>
 							Description
 						</legend>
-						<ul id="two_columns">
+						<ul class="two_column">
 							<li>
 								<label for="description_align">Align</label>
 								<select id="description_align">
@@ -101,10 +106,11 @@
 								<label for="description_class">Class</label>
 								<select id="description_class">
 									<option value="" selected disabled>Unspecified</option>
-									<option value="2">Dwarf</option>
-									<option value="3">Elf</option>
-									<option value="4">Halfling</option>
-									<option value="5">Human</option>
+									<option value="2">Cleric</option>
+									<option value="3">Fighter</option>
+									<option value="4">Monk</option>
+									<option value="5">Rogue</option>
+									<option value="6">Wizard</option>
 								</select>
 							</li>
 							<li>
@@ -117,38 +123,54 @@
 							</li>
 							<li>
 								<label for="description_eyes">Eyes</label>
-								<input name="description_eyes" id="description_eyes" type="text">
+								<input name="description_eyes" id="description_eyes" type="text" size="10">
 							</li>
 							<li>
 								<label for="description_hair">Hair</label>
-								<input name="description_hair" id="description_hair" type="text">
+								<input name="description_hair" id="description_hair" type="text" size="10">
 							</li>
 							<li>
-								<label for="description_hgt_ft">Height</label>
-								<input name="description_hgt_ft" id="description_hgt_ft" type="number" value="6" min="0" >
+								<label for="description_height_ft">Height</label>
+								<input name="description_height_ft" id="description_height_ft" type="number" value="6" min="0" size="2" maxlength="2">
 								'
-								<input name="description_hgt_in" id="description_hgt_in" type="number" value="0" min="0" max="11" >
+								<input name="description_height_in" id="description_height_in" type="number" value="0" min="0" max="11" size="2" maxlength="2">
 								''
 							</li>
 							<li>
 								<label for="description_weight">Weight</label>
-								<input name="description_weight" id="description_weight" type="number" value="0" min="0">
+								<input name="description_weight" id="description_weight" type="number" value="0" min="0" size="4" maxlength="4">
 							</li>
 						</ul>
-						<!-- Specialty -->
-						<!-- Background -->
+						<ul>
+							<li>
+								<label for="description_specialty">Specialty</label>
+								<input name="description_specialty" id="description_specialty" type="text">
+							</li>
+							<li>
+								<label for="description_background">Background</label>
+								<input name="description_background" id="description_background" type="text">
+							</li>
+						</ul>
 					</fieldset>
 
 					<fieldset id="experience" class="label_small">
 						<legend>
 							Experience points
 						</legend>
-						<label for="experience_level">Level</label>
-						<input name="experience_level" id="experience_level" type="number">
-						<label for="experience_xp">XP</label>
-						<input name="experience_xp" id="experience_xp" type="number">
-						<label for="experience_nl">NL</label>
-						<input name="experience_nl" id="experience_nl" type="number">
+						<ul>
+							<li>
+								<label for="experience_level">Level</label>
+								<input name="experience_level" id="experience_level" type="number" size="3" maxlength="3">
+							</li>
+							<li>
+								<label for="experience_xp">XP</label>
+								<input name="experience_xp" id="experience_xp" type="number" size="9" maxlength="9">
+							</li>
+							<li>
+								<label for="experience_nl">NL</label>
+								<input name="experience_nl" id="experience_nl" type="number" size="9" maxlength="9">
+							</li>
+						</ul>
 					</fieldset>
 					<fieldset id="abilities" class="label_small">
 						<legend>
@@ -156,28 +178,39 @@
 						</legend>
 						<ul>
 							<li>
+								<p></p>
+								<p>SCORE</p>
+								<p>MODIFIER</p>
+							</li>
+							<li>
 								<label for="abilities_str">STR</label>
-								<input name="abilities_str" id="abilities_str" type="number">
+								<input name="abilities_str" id="abilities_str" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_str_mod" id="abilities_str_mod" type="number" value="0" readonly>
 							</li>
 							<li>
-								<label for="abilities_str">DEX</label>
-								<input name="abilities_dex" id="abilities_dex" type="number">
+								<label for="abilities_dex">DEX</label>
+								<input name="abilities_dex" id="abilities_dex" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_dex_mod" id="abilities_dex_mod" type="number" value="0" readonly>
 							</li>
 							<li>
-								<label for="abilities_str">CON</label>
-								<input name="abilities_con" id="abilities_con" type="number">
+								<label for="abilities_con">CON</label>
+								<input name="abilities_con" id="abilities_con" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_con_mod" id="abilities_con_mod" type="number" value="0" readonly>
 							</li>
 							<li>
-								<label for="abilities_str">INT</label>
-								<input name="abilities_int" id="abilities_int" type="number">
+								<label for="abilities_int">INT</label>
+								<input name="abilities_int" id="abilities_int" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_int_mod" id="abilities_int_mod" type="number" value="0" readonly>
 							</li>
 							<li>
-								<label for="abilities_str">WIS</label>
-								<input name="abilities_wis" id="abilities_wis" type="number">
+								<label for="abilities_wis">WIS</label>
+								<input name="abilities_wis" id="abilities_wis" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_wis_mod" id="abilities_wis_mod" type="number" value="0" readonly>
 							</li>
 							<li>
-								<label for="abilities_str">CHA</label>
-								<input name="abilities_cha" id="abilities_cha" type="number">
+								<label for="abilities_cha">CHA</label>
+								<input name="abilities_cha" id="abilities_cha" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_cha_mod" id="abilities_cha_mod" type="number" value="0" readonly>
 							</li>
 						</ul>
 					</fieldset>
@@ -305,21 +338,22 @@
 							Playtest notes
 						</legend>
 					</fieldset>
-				</section>
+				</section> 
 
 			</form>
 		</div>
 
 		<footer role="contentinfo">
-			Hero Creator
-			<br />
-			an interactive HTML5-based character sheet
-			<br />
-			for Dungeons and Dragons Next edition
-			<br />
-			based on beta content provided for free by Wizards of the Coast.
-			<br />
-			This page is for educational purposes only.
+			<h2>Hero Creator</h2>
+			<p>
+				an interactive HTML5-based character sheet
+				<br />
+				for Dungeons and Dragons Next edition
+				<br />
+				based on beta content provided for free by Wizards of the Coast.
+				<br />
+				This page is for educational purposes only.
+			</p>
 		</footer>
 
 		<!-- JavaScript at the bottom for fast page loading -->
