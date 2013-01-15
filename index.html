@@ -38,24 +38,30 @@
 	</head>
 
 	<body>
-
 		<header role="banner">
 			<nav>
 				<div id="logo"></div>
 				<ul id="save_load">
 					<li>
-						<a href="#">Save</a>
+						<a href="#" onclick="save(document.getElementById('character_sheet')); return false;">Save</a>
 					</li>
 					<li>
-						<a href="#">Load</a>
+						<a href="#" onclick="load(document.getElementById('character_sheet')); return false;">Load</a>
+						<input type="file" id="files" name="file">
 					</li>
 				</ul>
+				<div id="progress_bar">
+					<div class="percent">
+						0%
+					</div>
+				</div>
 			</nav>
 			<input name="character_name" class="value_label" type="text" form="character_sheet" id="name" style='text-transform: uppercase;' onBlur="this.value=this.value.toUpperCase()" placeholder="type your name..." required>
 		</header>
 
 		<div id="main" role="main">
-			<form name="character_sheet" role="form" onsubmit="return false">
+			<form id="character_sheet" name="character_sheet" role="form" enctype="text/plain" action="#" onsubmit="save(this)) return true; return false">
+				<!-- <form action="#" id="character_sheet" method="post" enctype="text/plain" onsubmit="if (save(this)) return true; return false"> -->
 
 				<section id="first">
 					<fieldset id="ribbon">
@@ -179,8 +185,12 @@
 						<ul>
 							<li>
 								<p></p>
-								<p>SCORE</p>
-								<p>MODIFIER</p>
+								<p>
+									SCORE
+								</p>
+								<p>
+									MODIFIER
+								</p>
 							</li>
 							<li>
 								<label for="abilities_str">STR</label>
@@ -338,7 +348,7 @@
 							Playtest notes
 						</legend>
 					</fieldset>
-				</section> 
+				</section>
 
 			</form>
 		</div>
@@ -367,6 +377,7 @@
 		<!-- scripts concatenated and minified via ant build script-->
 		<script defer src="js/plugins.js"></script>
 		<script defer src="js/script.js"></script>
+		<script defer src="js/mylibs/panelSaveLoad.js"></script>
 		<!-- end scripts-->
 
 		<!-- Change UA-XXXXX-X to be your site's ID -->
