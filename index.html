@@ -56,13 +56,11 @@
 					</div>
 				</div>
 			</nav>
-			<input name="character_name" class="value_label" type="text" form="character_sheet" id="name" style='text-transform: uppercase;' onBlur="this.value=this.value.toUpperCase()" placeholder="type your name..." required>
+			<input name="character_name" id="character_name" type="text" form="character_sheet" style='text-transform: uppercase;' placeholder="type your name..." required>
 		</header>
 
 		<div id="main" role="main">
 			<form id="character_sheet" name="character_sheet" role="form" enctype="text/plain" action="#" onsubmit="save(this)) return true; return false">
-				<!-- <form action="#" id="character_sheet" method="post" enctype="text/plain" onsubmit="if (save(this)) return true; return false"> -->
-
 				<section id="first">
 					<fieldset id="ribbon">
 						<ul>
@@ -130,11 +128,11 @@
 								</li>
 								<li>
 									<label for="description_eyes">Eyes</label>
-									<input name="description_eyes" id="description_eyes" type="text" size="10">
+									<input name="description_eyes" id="description_eyes" type="text" size="10" maxlength="10">
 								</li>
 								<li>
 									<label for="description_hair">Hair</label>
-									<input name="description_hair" id="description_hair" type="text" size="10">
+									<input name="description_hair" id="description_hair" type="text" size="10" maxlength="10">
 								</li>
 								<li>
 									<label for="description_height_ft">Height</label>
@@ -237,16 +235,28 @@
 							<legend>
 								Attributes
 							</legend>
-							<label for="attributes_speed">Speed</label>
-							<input name="attributes_speed" id="attributes_speed" type="number">
-							<label for="attributes_hitdice">Hitdice</label>
-							<input name="attributes_hitdice" id="attributes_hitdice" type="number">
-							<label for="attributes_initiative">Initiative</label>
-							<input name="attributes_initiative" id="attributes_initiative" type="number">
-							<label for="attributes_vision">Vision</label>
-							<input name="attributes_vision" id="attributes_vision" type="number">
-							<label for="attributes_size">Size</label>
-							<input name="attributes_size" id="attributes_size" type="number">
+							<ul>
+								<li>
+									<label for="attributes_speed">Speed</label>
+									<input name="attributes_speed" id="attributes_speed" type="number" size="10" maxlength="10">
+								</li>
+								<li>
+									<label for="attributes_hitdice">Hit Dice</label>
+									<input name="attributes_hitdice" id="attributes_hitdice" type="number" size="5" maxlength="5">
+								</li>
+								<li>
+									<label for="attributes_initiative">Initiative</label>
+									<input name="attributes_initiative" id="attributes_initiative" type="number" size="3" maxlength="3">
+								</li>
+								<li>
+									<label for="attributes_vision">Vision</label>
+									<input name="attributes_vision" id="attributes_vision" type="number" size="12" maxlength="12">
+								</li>
+								<li>
+									<label for="attributes_size">Size</label>
+									<input name="attributes_size" id="attributes_size" type="number" size="10" maxlength="10">
+								</li>
+							</ul>
 						</fieldset>
 						<fieldset id="languages" class="label_small">
 							<legend>
@@ -267,7 +277,7 @@
 								<label for="attacks_weapon1_dmg">(Dmg)</label>
 							</li>
 							<li>
-								<input name="attacks_weapon1" id="attacks_weapon1" type="text">
+								<input name="attacks_weapon1" id="attacks_weapon1" type="text" size="15" maxlength="15">
 								(
 								<input name="attacks_weapon1_atk" id="attacks_weapon1_atk" type="number" size="3" maxlength="3">
 								)
@@ -276,7 +286,7 @@
 								)
 							</li>
 							<li>
-								<input name="attacks_weapon2" id="attacks_weapon2" type="text">
+								<input name="attacks_weapon2" id="attacks_weapon2" type="text" size="15" maxlength="15">
 								(
 								<input name="attacks_weapon2_atk" id="attacks_weapon2_atk" type="number" size="3" maxlength="3">
 								)
@@ -285,7 +295,7 @@
 								)
 							</li>
 							<li>
-								<input name="attacks_weapon3" id="attacks_weapon3" type="text">
+								<input name="attacks_weapon3" id="attacks_weapon3" type="text" size="15" maxlength="15">
 								(
 								<input name="attacks_weapon3_atk" id="attacks_weapon3_atk" type="number" size="3" maxlength="3">
 								)
@@ -332,19 +342,19 @@
 				</section>
 
 				<section id="second">
-					<fieldset id="class_features" class="label_big_crossed">
+					<fieldset id="class_features" class="label_narrow_pike">
 						<legend>
 							Class features
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="racial_traits" class="label_big_crossed">
+					<fieldset id="racial_traits" class="label_narrow_pike">
 						<legend>
 							Racial traits
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="skills" class="label_big_crossed">
+					<fieldset id="skills" class="label_narrow_pike">
 						<legend>
 							Skills
 						</legend>
@@ -353,33 +363,71 @@
 				</section>
 
 				<section id="third">
-					<fieldset id="feats" class="label_small_crossed">
+					<fieldset id="feats" class="label_small_pike">
 						<legend>
 							Feats
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="maneuvers" class="label_small_crossed">
+					<fieldset id="maneuvers" class="label_small_pike">
 						<legend>
 							Maneuvers
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="spell_notes" class="label_small_crossed">
+					<fieldset id="spell_notes" class="label_small_pike">
 						<legend>
 							Spell notes
 						</legend>
-						
+						<ul>
+							<li id="spell_notes_dc_list">
+								<p>Save DC</p>
+								(<input name="spell_notes_dc" id="spell_notes_dc" type="number" size="3" maxlength="3" pattern="^[1-9][0-9][0-9]?$">)
+							</li>
+							<li id="spell_notes_slots">
+								<p>Spells or Spell Slots per Day</p>
+								<ul>
+									<li>
+										0th
+										<input name="spell_notes_slots0" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+									<li>
+										1st
+										<input name="spell_notes_slots1" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+									<li>
+										2nd
+										<input name="spell_notes_slots2" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+									<li>
+										3rd
+										<input name="spell_notes_slots3" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+									<li>
+										4th
+										<input name="spell_notes_slots4" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+									<li>
+										5th
+										<input name="spell_notes_slots5" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+									<li>
+										6th
+										<input name="spell_notes_slots6" type="number" size="2" maxlength="2" pattern="[1-9][0-9]?">
+									</li>
+								</ul>
+							</li>
+						</ul>
 						
 						
 					</fieldset>
-					<fieldset id="prepared_spells" class="label_small_crossed">
+					<fieldset id="prepared_spells" class="label_small_pike">
 						<legend>
 							Prepared spells
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="spellbook" class="label_small_crossed">
+					<fieldset id="spellbook" class="label_small_pike">
 						<legend>
 							Spellbook
 						</legend>
@@ -388,19 +436,19 @@
 				</section>
 
 				<section id="fourth">
-					<fieldset id="character_notes" class="label_big_crossed">
+					<fieldset id="character_notes" class="label_big_pike">
 						<legend>
 							Additional character notes
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="equipment" class="label_big_crossed">
+					<fieldset id="equipment" class="label_big_pike">
 						<legend>
 							Equipment and treasure
 						</legend>
 						<textarea></textarea>
 					</fieldset>
-					<fieldset id="playtest_notes" class="label_big_crossed">
+					<fieldset id="playtest_notes" class="label_big_pike">
 						<legend>
 							Playtest notes
 						</legend>

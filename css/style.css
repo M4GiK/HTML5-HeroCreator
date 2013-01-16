@@ -230,6 +230,29 @@ body header {
 	z-index: 100;
 }
 
+/*
+ * Position and style for the very special name input.
+ */
+#character_name {
+	display: block;
+	margin: 0 auto;
+	border: 0;
+
+	position: relative;
+	top: 440px;
+
+	background-color: rgba(30, 30, 30, 0.6);
+	color: white;
+	text-align: center;
+	font-size: 2rem;
+
+	width: 30rem;
+
+	-moz-box-shadow: 0 0 15px 5px #000;
+	-webkit-box-shadow: 0 0 15px 5px #000;
+	box-shadow: 0 0 15px 5px #000;
+}
+
 div#main {
 	background-color: white;
 
@@ -257,20 +280,18 @@ body footer {
 	text-align: center;
 	color: white;
 
-	margin: 0 auto;
+	margin: -2rem auto 0 auto;
 	height: 106px;
 	width: 940px;
-	
-	
 
 	-moz-box-shadow: 0 0 15px 5px #000;
 	-webkit-box-shadow: 0 0 15px 5px #000;
 	box-shadow: 0 0 15px 5px #000;
+
 	z-index: 100;
 }
 
 footer h2 {
-	margin-top: -1px;
 	padding-top: 0.5rem;
 }
 
@@ -278,17 +299,16 @@ footer h2 {
 
 /*---------------------START CHARACTER SHEET LAYOUT---------------------------*/
 
-#main form {
-/*	font-size: 12px;*/
-}
-
 section {
 	width: 100%; /* 940px */
-	
+	margin-bottom: 2rem;
 	padding: 0 1rem;
-	
-	border: black 1px solid;
-/*	background: yellow;*/
+}
+
+section textarea {
+	display: block;
+	width: 90%;
+	margin: 0 auto;
 }
 
 section#first {
@@ -301,20 +321,6 @@ section#first {
 
 section#first > *:not(:first-child) {
 	margin: 2rem 0.5rem;
-}
-
-.label_small {
-/*	background: red;*/
-}
-
-.value_label {
-	background-color: #050708;
-	border: 0;
-	color: white;
-	width: 20em;
-	margin-top: 8px;
-	margin-left: 275px;
-	text-align: center;
 }
 
 /* 
@@ -352,12 +358,12 @@ section#first > *:not(:first-child) {
 }
 
 label[for=ribbon_ac] {
-	top: 8.3rem;
+	top: 8.4rem;
 	position: relative;
 }
 
 label[for=ribbon_hp] {
-	top: 8.35rem;
+	top: 8.8rem;
 	position: relative;
 }
 
@@ -382,7 +388,6 @@ section#first #description_and_experience {
 #description {
 	/*width: 14.36875rem;*/ /* 229.9px / 16px */
 	width: 100%;
-	min-height: 16rem;
 }
 
 #description ul {
@@ -394,6 +399,7 @@ section#first #description_and_experience {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
+	justify-content: space-around;
 }
 
 /*
@@ -429,6 +435,7 @@ section#first #description_and_experience {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
+	justify-content: space-around;
 }
 
 /*
@@ -461,13 +468,19 @@ section#first #description_and_experience {
 	display: -webkit-flex;
 	display: -ms-flex;
 	display: flex;
+	justify-content: space-around;
+
 	padding: 0.2rem;
-	width: 100%;
 }
 
 #abilities li * {
 	flex: 1;
 	margin: 0.1rem;
+}
+
+#abilities li > label {
+	padding: 0.4rem 0 0 1rem;
+	line-height: 1rem;
 }
 
 #abilities li:nth-child(2n+3) {
@@ -491,16 +504,26 @@ section#first #description_and_experience {
 }
 
 section#first #attributes_and_languages {
-	flex: 7;
+	flex: 3;
 }
 
 /*
  * Code for the Attributes fieldset.
  */
 
-#attributes {
-/*	width: 7rem;*/
-	min-height: 15rem;
+#attributes li {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+#attributes li > label {
+	margin: 0 0.4rem;
+}
+
+#attributes li > input {
+	flex: 1;
 }
 
 #languages {
@@ -513,18 +536,24 @@ section#first #attributes_and_languages {
  */
 
 #attacks {
-	flex: 5;
+	flex: 4;
 }
 
 #attacks li {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
+	justify-content: space-around;
+	
+	margin-right: 2rem;
 }
 
 /*
  * Make the first input field - weapon/spell name - larger.
  */
 #attacks li > *:nth-child(1) {
-	flex: 4;
+	flex: 2;
 }
 
 #attacks li > *:not(:first-child) {
@@ -547,7 +576,9 @@ section#second {
 }
 
 section#second > fieldset {
-	width: 100%;
+	flex: 1;
+	
+	margin-right: 2rem;
 }
 
 /*
@@ -575,6 +606,55 @@ section#third {
 	flex: 1;
 }
 
+#spell_notes {
+	text-align: center;
+}
+
+#spell_notes > ul {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	
+	margin-right: 2rem;
+}
+
+#spell_notes_dc_list {
+	flex: 1;
+
+	font-size: 1.3rem;
+}
+
+#spell_notes_dc {
+	text-align: center;
+}
+
+#spell_notes_slots {
+	flex: 5;
+}
+
+#spell_notes_slots > ul {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+}
+
+#spell_notes_slots > ul > li {
+	flex: 1;
+	
+	height: 4rem;
+	
+	border: 0.2rem solid black;
+	border-radius: 0.3rem;
+}
+
+#spell_notes_slots > ul > li > * {
+	display: block;
+	margin: 0 auto;
+	font-size: 1.2rem;
+}
+
 section#fourth {
 	display: -moz-flex;
 	display: -webkit-flex;
@@ -586,6 +666,8 @@ section#fourth {
 	-webkit-flex-direction: column;
 	-ms-flex-direction: column;
 	flex-direction: column;
+	
+	padding-bottom: 6rem;
 }
 
 section#fourth > * {
@@ -605,14 +687,6 @@ form ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-}
-
-/*
- * Underline for all listed [input] elements.
- */
-form ul li {
-/*	border-bottom: 1px solid #ccc;*/
-	margin: 0.2rem;
 }
 
 /* Two-column layout for certain input fieldsets.
@@ -657,14 +731,9 @@ form fieldset {
 }
 
 form fieldset legend {
-	background: black content-box;
 	margin: 0 auto 0.5rem;
-
 	color: white;
-	height: 1.2rem;
-	width: 88%;
 
-	line-height: 2rem;
 	font-size: 1rem;
 	text-align: center;
 	text-transform: uppercase;
@@ -676,25 +745,50 @@ fieldset.label_small legend {
 	            black center content-box;
 	background-size: contain, contain;
 
-	padding: 0.31875rem 1rem 0.38rem 1rem;
+	padding: 0.31875rem 0.7rem 0.38rem 0.7rem;
+	width: 84%;
+	height: 1rem;
+	
+	line-height: 1.3rem;
 }
 
-fieldset.label_small_crossed legend {
+fieldset.label_small_pike legend {
 	background: url("../img/label_small_pike-left.svg") left no-repeat border-box,
 	            url("../img/label_small_pike-right.svg") right no-repeat border-box,
 	            black center content-box;
 	background-size: contain, contain;
 
-	padding: 0.35rem 1rem 0.38rem 1rem;
+	padding: 0.35rem 8rem 0.3rem 7.5rem;
+	width: 44%;
+	height: 1.2rem;
+	
+	line-height: 1.5rem;
 }
 
-fieldset.label_big_crossed legend {
+fieldset.label_narrow_pike legend {
+	background: url("../img/label_narrow_pike-left.svg") left no-repeat border-box,
+	            url("../img/label_narrow_pike-right.svg") right no-repeat border-box,
+	            black center content-box;
+	background-size: contain, contain;
+
+	padding: 0.31875rem 5rem 0.38rem 5rem;
+	width: 38%;
+	height: 2rem;
+	
+	line-height: 2.1rem;
+}
+
+fieldset.label_big_pike legend {
 	background: url("../img/label_big_pike-left.svg") left no-repeat border-box,
 	                  url("../img/label_big_pike-right.svg") right no-repeat border-box,
 	                  black center content-box;
 	background-size: contain, contain;
 
-	padding: 0.35rem 1rem 0.38rem 1rem;
+	padding: 0.3rem 18.2rem 0.3rem 19rem;
+	width: 33%;
+	height: 2rem;
+	
+	line-height: 2rem;
 }
 
 
@@ -811,7 +905,7 @@ header nav:hover
 }
 
 #progress_bar .percent {
-	background-color: grey;
+	background-color: gray;
 	height: 8px;
 	width: 0;
 }
