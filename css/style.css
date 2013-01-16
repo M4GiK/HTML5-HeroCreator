@@ -260,6 +260,8 @@ body footer {
 	margin: 0 auto;
 	height: 106px;
 	width: 940px;
+	
+	
 
 	-moz-box-shadow: 0 0 15px 5px #000;
 	-webkit-box-shadow: 0 0 15px 5px #000;
@@ -267,33 +269,42 @@ body footer {
 	z-index: 100;
 }
 
+footer h2 {
+	margin-top: -1px;
+	padding-top: 0.5rem;
+}
+
 /*-------------------------END WEBPAGE LAYOUT---------------------------------*/
 
 /*---------------------START CHARACTER SHEET LAYOUT---------------------------*/
 
 #main form {
-	margin: 0 1rem;
+/*	font-size: 12px;*/
+}
+
+section {
+	width: 100%; /* 940px */
+	
+	padding: 0 1rem;
+	
+	border: black 1px solid;
+/*	background: yellow;*/
 }
 
 section#first {
-	width: 100%; /* 940px */
-	min-height: 24rem;
-	
-	background: yellow;
-	
-	/*-moz-column-count: 4;
-	-webkit-column-count: 4;
-	column-count: 4;
-	-moz-column-gap: 0.5rem;
-	-webkit-column-gap: 0.5rem;
-	column-gap: 0.5rem;
-	-moz-column-fill: balance;
-	-webkit-column-fill: balance;
-	column-fill: balance;*/
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-around;
+}
+
+section#first > *:not(:first-child) {
+	margin: 2rem 0.5rem;
 }
 
 .label_small {
-	background: red;
+/*	background: red;*/
 }
 
 .value_label {
@@ -311,7 +322,6 @@ section#first {
  */
 
 #ribbon {
-	margin: 0rem 2rem 2rem 2rem;
 	width: 6.25rem; /* 100px / 16px */
 	height: 22.041875rem; /* 294.8288px / 16px */
 	
@@ -361,12 +371,17 @@ label[for=ribbon_hp] {
 	position: relative;
 }
 
+section#first #description_and_experience {
+	flex: 11;
+}
+
 /* 
  * Code for the Description fieldset.
  */
 
 #description {
-	width: 14.36875rem; /* 229.9px / 16px */
+	/*width: 14.36875rem;*/ /* 229.9px / 16px */
+	width: 100%;
 	min-height: 16rem;
 }
 
@@ -377,14 +392,26 @@ label[for=ribbon_hp] {
 #description li {
 	display: -moz-flex;
 	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
 }
 
-#description li label {
+/*
+ * Append form input labels with some empty space.
+ */
+#description li > label {
 	margin-right: 0.7rem;
 }
 
-#description li input, #description li select {
+#description p {
+	line-height: 0.1rem;
+}
+
+/*
+ * Distribute free space evenly among the form inputs,
+ * leaving only space needed for the label.
+ */
+#description li *:not(label) {
 	flex: 1;
 }
 
@@ -393,18 +420,31 @@ label[for=ribbon_hp] {
  */
 
 #experience {
-	width: 14.36875rem;
-	min-height: 7em;
+/*	width: 14.36875rem;*/
+	width: 100%;
+}
+
+#experience ul {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
 	display: flex;
-
 }
 
-#experience li {
-	display: inline;
+/*
+ * Append form input labels with some empty space.
+ */
+#experience li > label {
+	margin: 0 0.2rem;
 }
 
-#experience li label {
-	margin-right: 0.7rem;
+/*
+ * Distribute free space evenly among the form inputs,
+ * leaving only space needed for the label.
+ */
+
+#experience li input {
+	flex: 1;
 }
 
 /* 
@@ -412,29 +452,25 @@ label[for=ribbon_hp] {
  */
 
 #abilities {
-	width: 7rem;
-	min-height: 18rem;
-	
-	text-align: justify;
-
+/*	width: 9.0625rem;*/
+	flex: 6;
 }
 
 #abilities li {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	padding: 0.2rem;
 	width: 100%;
 }
 
 #abilities li * {
-	display: inline-block;
-	width: 29%;
+	flex: 1;
+	margin: 0.1rem;
 }
 
-#abilities li *:after {
-	display: inline-block;
-	width: 100%;
-	content: '';
-}
-
-#abilities li:nth-child(2n) {
+#abilities li:nth-child(2n+3) {
 	background: url("../img/attribute_shadow.svg") no-repeat center;
 	background-size: 100% 100%;
 	-o-background-size: 100% 100%;
@@ -454,23 +490,112 @@ label[for=ribbon_hp] {
 	width: 2rem;
 }
 
+section#first #attributes_and_languages {
+	flex: 7;
+}
+
 /*
  * Code for the Attributes fieldset.
  */
 
 #attributes {
-	width: 7rem;
+/*	width: 7rem;*/
 	min-height: 15rem;
 }
 
 #languages {
-	width: 7rem;
+/*	width: 7rem;*/
 	min-height: 6rem;
 }
 
+/*
+ * Code for the Attacks fieldset.
+ */
+
 #attacks {
-	width: 9rem;
+	flex: 5;
 }
+
+#attacks li {
+	display: flex;
+}
+
+/*
+ * Make the first input field - weapon/spell name - larger.
+ */
+#attacks li > *:nth-child(1) {
+	flex: 4;
+}
+
+#attacks li > *:not(:first-child) {
+	flex: 1;
+}
+
+/*
+ * Second character sheet section:
+ * - class features (textarea),
+ * - racial traits (textarea),
+ * - skills (textarea).
+ */
+
+section#second {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-around;
+}
+
+section#second > fieldset {
+	width: 100%;
+}
+
+/*
+ * Character sheet third section:
+ * - feats (textarea),
+ * - spell notes (custom input fields),
+ * - prepared spells (textarea),
+ * - maneuvers (textarea),
+ * - spellbook (textarea).
+ */
+
+section#third {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	-ms-column-count: 2;
+	column-count: 2;
+	
+	-moz-column-gap: 0.5rem;
+	-webkit-column-gap: 0.5rem;
+	-ms-column-count: 0.5rem;
+	column-count: 0.5rem;
+}
+
+#section#third > * {
+	flex: 1;
+}
+
+section#fourth {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	justify-content: space-around;
+
+	-moz-flex-direction: column;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+section#fourth > * {
+	flex: 1;
+}
+
+#character_notes, #equipment, #playtest_notes {
+	width: 100%;
+}
+
 
 /*----------------------END CHARACTER SHEET LAYOUT----------------------------*/
 
@@ -486,12 +611,11 @@ form ul {
  * Underline for all listed [input] elements.
  */
 form ul li {
-	/*border-bottom: 1px solid #ccc;*/
-	margin: 0.2em;
+/*	border-bottom: 1px solid #ccc;*/
+	margin: 0.2rem;
 }
 
-/* Two-column layout for certain input fieldsets;
- * set to avoid breaking inside if possible.
+/* Two-column layout for certain input fieldsets.
  */
 
 form fieldset .two_column {
@@ -499,9 +623,9 @@ form fieldset .two_column {
 	-webkit-column-count: 2;
 	column-count: 2;
 
-	-moz-column-gap: 0.5em;
-	-webkit-column-gap: 0.5em;
-	column-gap: 0.5em;
+	-moz-column-gap: 0.5rem;
+	-webkit-column-gap: 0.5rem;
+	column-gap: 0.5rem;
 
 	-moz-column-break-inside: avoid;
 	-webkit-column-break-inside: avoid;
@@ -512,9 +636,10 @@ form fieldset .two_column {
 	column-fill: balance;
 }
 
-form input, form textarea {
+form select, form input, form textarea {
 	border: none;
-	background: #f4f4f4;
+/*	background: #f4f4f4;*/
+	background: transparent;
 
 	-webkit-box-shadow: inset 0 2px 3px rgba(0,0,0,.1);
 	-moz-box-shadow: inset 0 2px 3px rgba(0,0,0,.1);
@@ -528,19 +653,19 @@ form input:focus, form textarea:focus {
 }
 
 form fieldset {
-	display: inline;
 	padding: 0.1rem;
 }
 
 form fieldset legend {
 	background: black content-box;
-	margin-bottom: 0.5rem;
+	margin: 0 auto 0.5rem;
 
 	color: white;
-	height: 1.5rem;
-	width: 100%;
+	height: 1.2rem;
+	width: 88%;
 
-	line-height: 1.5rem;
+	line-height: 2rem;
+	font-size: 1rem;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -551,7 +676,7 @@ fieldset.label_small legend {
 	            black center content-box;
 	background-size: contain, contain;
 
-	padding: 0.35rem 1rem 0.38rem 1rem;
+	padding: 0.31875rem 1rem 0.38rem 1rem;
 }
 
 fieldset.label_small_crossed legend {
@@ -564,7 +689,7 @@ fieldset.label_small_crossed legend {
 }
 
 fieldset.label_big_crossed legend {
-	background-image: url("../img/label_big_pike-left.svg") left no-repeat border-box,
+	background: url("../img/label_big_pike-left.svg") left no-repeat border-box,
 	                  url("../img/label_big_pike-right.svg") right no-repeat border-box,
 	                  black center content-box;
 	background-size: contain, contain;

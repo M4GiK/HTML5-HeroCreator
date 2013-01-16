@@ -78,106 +78,113 @@
 						</ul>
 					</fieldset>
 
-					<fieldset id="description" class="label_small">
-						<legend>
-							Description
-						</legend>
-						<ul class="two_column">
-							<li>
-								<label for="description_align">Align</label>
-								<select id="description_align">
-									<option value="" selected disabled>Unaligned</option>
-									<option value="2">Lawful Good</option>
-									<option value="3">Neutral Good</option>
-									<option value="4">Chaotic Good</option>
-									<option value="5">Lawful Neutral</option>
-									<option value="6">Neutral</option>
-									<option value="7">Chaotic Neutral</option>
-									<option value="8">Lawful Evil</option>
-									<option value="9">Neutral Evil</option>
-									<option value="10">Chaotic Evil</option>
-								</select>
-							</li>
-							<li>
-								<label for="description_race">Race</label>
-								<select id="description_race">
-									<option value="" selected disabled>Unspecified</option>
-									<option value="2">Dwarf</option>
-									<option value="3">Elf</option>
-									<option value="4">Halfling</option>
-									<option value="5">Human</option>
-								</select>
-							</li>
-							<li>
-								<label for="description_class">Class</label>
-								<select id="description_class">
-									<option value="" selected disabled>Unspecified</option>
-									<option value="2">Cleric</option>
-									<option value="3">Fighter</option>
-									<option value="4">Monk</option>
-									<option value="5">Rogue</option>
-									<option value="6">Wizard</option>
-								</select>
-							</li>
-							<li>
-								<label for="description_gender">Gender</label>
-								<select id="description_gender">
-									<option value="" selected disabled>Unspecified</option>
-									<option value="male">Male</option>
-									<option value="female">Female</option>
-								</select>
-							</li>
-							<li>
-								<label for="description_eyes">Eyes</label>
-								<input name="description_eyes" id="description_eyes" type="text" size="10">
-							</li>
-							<li>
-								<label for="description_hair">Hair</label>
-								<input name="description_hair" id="description_hair" type="text" size="10">
-							</li>
-							<li>
-								<label for="description_height_ft">Height</label>
-								<input name="description_height_ft" id="description_height_ft" type="number" value="6" min="0" size="2" maxlength="2">
-								'
-								<input name="description_height_in" id="description_height_in" type="number" value="0" min="0" max="11" size="2" maxlength="2">
-								''
-							</li>
-							<li>
-								<label for="description_weight">Weight</label>
-								<input name="description_weight" id="description_weight" type="number" value="0" min="0" size="4" maxlength="4">
-							</li>
-						</ul>
-						<ul>
-							<li>
-								<label for="description_specialty">Specialty</label>
-								<input name="description_specialty" id="description_specialty" type="text">
-							</li>
-							<li>
-								<label for="description_background">Background</label>
-								<input name="description_background" id="description_background" type="text">
-							</li>
-						</ul>
-					</fieldset>
+					<div id="description_and_experience">
+						<fieldset id="description" class="label_small">
+							<legend>
+								Description
+							</legend>
+							<ul class="two_column">
+								<li>
+									<label for="description_align">Align</label>
+									<select id="description_align">
+										<option value="" selected disabled>Unaligned</option>
+										<option value="2">Lawful Good</option>
+										<option value="3">Neutral Good</option>
+										<option value="4">Chaotic Good</option>
+										<option value="5">Lawful Neutral</option>
+										<option value="6">Neutral</option>
+										<option value="7">Chaotic Neutral</option>
+										<option value="8">Lawful Evil</option>
+										<option value="9">Neutral Evil</option>
+										<option value="10">Chaotic Evil</option>
+									</select>
+								</li>
+								<li>
+									<label for="description_race">Race</label>
+									<select id="description_race">
+										<option value="" selected disabled>Unspecified</option>
+										<option value="2">Dwarf</option>
+										<option value="3">Elf</option>
+										<option value="4">Halfling</option>
+										<option value="5">Human</option>
+									</select>
+								</li>
+								<li>
+									<label for="description_class">Class</label>
+									<select id="description_class">
+										<option value="" selected disabled>Unspecified</option>
+										<option value="2">Cleric</option>
+										<option value="3">Fighter</option>
+										<option value="4">Monk</option>
+										<option value="5">Rogue</option>
+										<option value="6">Wizard</option>
+									</select>
+								</li>
+								<li>
+									<label for="description_gender">Gender</label>
+									<select id="description_gender">
+										<option value="" selected disabled>Unspecified</option>
+										<option value="male">Male</option>
+										<option value="female">Female</option>
+									</select>
+								</li>
+								<li>
+									<label for="description_eyes">Eyes</label>
+									<input name="description_eyes" id="description_eyes" type="text" size="10">
+								</li>
+								<li>
+									<label for="description_hair">Hair</label>
+									<input name="description_hair" id="description_hair" type="text" size="10">
+								</li>
+								<li>
+									<label for="description_height_ft">Height</label>
+									<input name="description_height_ft" id="description_height_ft" type="number" value="6" min="0" size="2" maxlength="2">
+									<p>
+										'
+									</p>
+									<input name="description_height_in" id="description_height_in" type="number" value="0" min="0" max="11" size="2" maxlength="2">
+									<p>
+										''
+									</p>
+								</li>
+								<li>
+									<label for="description_weight">Weight</label>
+									<input name="description_weight" id="description_weight" type="number" value="0" min="0" size="4" maxlength="4">
+								</li>
+							</ul>
+							<ul>
+								<li>
+									<label for="description_specialty">Specialty</label>
+									<input name="description_specialty" id="description_specialty" type="text">
+								</li>
+								<li>
+									<label for="description_background">Background</label>
+									<input name="description_background" id="description_background" type="text">
+								</li>
+							</ul>
+						</fieldset>
 
-					<fieldset id="experience" class="label_small">
-						<legend>
-							Experience points
-						</legend>
-						<ul>
-							<li>
-								<label for="experience_level">Level</label>
-								<input name="experience_level" id="experience_level" type="number" size="3" maxlength="3">
-							</li>
-							<li>
-								<label for="experience_xp">XP</label>
-								<input name="experience_xp" id="experience_xp" type="number" size="9" maxlength="9">
-							</li>
-							<li>
-								<label for="experience_nl">NL</label>
-								<input name="experience_nl" id="experience_nl" type="number" size="9" maxlength="9">
-							</li>
-						</ul>
-					</fieldset>
+						<fieldset id="experience" class="label_small">
+							<legend>
+								Experience points
+							</legend>
+							<ul>
+								<li>
+									<label for="experience_level">Level</label>
+									<input name="experience_level" id="experience_level" type="number" size="3" maxlength="3">
+								</li>
+								<li>
+									<label for="experience_xp">XP</label>
+									<input name="experience_xp" id="experience_xp" type="number" size="9" maxlength="9">
+								</li>
+								<li>
+									<label for="experience_nl">NL</label>
+									<input name="experience_nl" id="experience_nl" type="number" size="9" maxlength="9">
+								</li>
+							</ul>
+						</fieldset>
+					</div>
+
 					<fieldset id="abilities" class="label_small">
 						<legend>
 							Abilities
@@ -194,57 +201,61 @@
 							</li>
 							<li>
 								<label for="abilities_str">STR</label>
-								<input name="abilities_str" id="abilities_str" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
-								<input name="abilities_str_mod" id="abilities_str_mod" type="number" value="0" readonly>
+								<input name="abilities_str" id="abilities_str" type="number" value="10" size="2" maxlength="2" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_str_mod" id="abilities_str_mod" type="number" value="0" size="2" readonly>
 							</li>
 							<li>
 								<label for="abilities_dex">DEX</label>
-								<input name="abilities_dex" id="abilities_dex" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
-								<input name="abilities_dex_mod" id="abilities_dex_mod" type="number" value="0" readonly>
+								<input name="abilities_dex" id="abilities_dex" type="number" value="10" size="2" maxlength="2" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_dex_mod" id="abilities_dex_mod" type="number" value="0" size="2" readonly>
 							</li>
 							<li>
 								<label for="abilities_con">CON</label>
-								<input name="abilities_con" id="abilities_con" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
-								<input name="abilities_con_mod" id="abilities_con_mod" type="number" value="0" readonly>
+								<input name="abilities_con" id="abilities_con" type="number" value="10" size="2" maxlength="2" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_con_mod" id="abilities_con_mod" type="number" value="0" size="2" readonly>
 							</li>
 							<li>
 								<label for="abilities_int">INT</label>
-								<input name="abilities_int" id="abilities_int" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
-								<input name="abilities_int_mod" id="abilities_int_mod" type="number" value="0" readonly>
+								<input name="abilities_int" id="abilities_int" type="number" value="10" size="2" maxlength="2" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_int_mod" id="abilities_int_mod" type="number" value="0" size="2" readonly>
 							</li>
 							<li>
 								<label for="abilities_wis">WIS</label>
-								<input name="abilities_wis" id="abilities_wis" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
-								<input name="abilities_wis_mod" id="abilities_wis_mod" type="number" value="0" readonly>
+								<input name="abilities_wis" id="abilities_wis" type="number" value="10" size="2" maxlength="2" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_wis_mod" id="abilities_wis_mod" type="number" value="0" size="2" readonly>
 							</li>
 							<li>
 								<label for="abilities_cha">CHA</label>
-								<input name="abilities_cha" id="abilities_cha" type="number" value="10" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
-								<input name="abilities_cha_mod" id="abilities_cha_mod" type="number" value="0" readonly>
+								<input name="abilities_cha" id="abilities_cha" type="number" value="10" size="2" maxlength="2" pattern="^[1-9][0-9]?$" onchange="updateAbilityModifier(this)">
+								<input name="abilities_cha_mod" id="abilities_cha_mod" type="number" value="0" size="2" readonly>
 							</li>
 						</ul>
 					</fieldset>
-					<fieldset id="attributes" class="label_small">
-						<legend>
-							Attributes
-						</legend>
-						<label for="attributes_speed">Speed</label>
-						<input name="attributes_speed" id="attributes_speed" type="number">
-						<label for="attributes_hitdice">Hitdice</label>
-						<input name="attributes_hitdice" id="attributes_hitdice" type="number">
-						<label for="attributes_initiative">Initiative</label>
-						<input name="attributes_initiative" id="attributes_initiative" type="number">
-						<label for="attributes_vision">Vision</label>
-						<input name="attributes_vision" id="attributes_vision" type="number">
-						<label for="attributes_size">Size</label>
-						<input name="attributes_size" id="attributes_size" type="number">
-					</fieldset>
-					<fieldset id="languages" class="label_small">
-						<legend>
-							Languages
-						</legend>
-						<textarea name="languages_text" id="languages_text"></textarea>
-					</fieldset>
+
+					<div id="attributes_and_languages">
+						<fieldset id="attributes" class="label_small">
+							<legend>
+								Attributes
+							</legend>
+							<label for="attributes_speed">Speed</label>
+							<input name="attributes_speed" id="attributes_speed" type="number">
+							<label for="attributes_hitdice">Hitdice</label>
+							<input name="attributes_hitdice" id="attributes_hitdice" type="number">
+							<label for="attributes_initiative">Initiative</label>
+							<input name="attributes_initiative" id="attributes_initiative" type="number">
+							<label for="attributes_vision">Vision</label>
+							<input name="attributes_vision" id="attributes_vision" type="number">
+							<label for="attributes_size">Size</label>
+							<input name="attributes_size" id="attributes_size" type="number">
+						</fieldset>
+						<fieldset id="languages" class="label_small">
+							<legend>
+								Languages
+							</legend>
+							<textarea name="languages_text" id="languages_text"></textarea>
+						</fieldset>
+					</div>
+
 					<fieldset id="attacks" class="label_small">
 						<legend>
 							Attacks
@@ -252,101 +263,148 @@
 						<ul>
 							<li>
 								<label for="attacks_weapon1">Weapon</label>
-								<label for="attacks_atk1">(Atk)</label>
-								<label for="attacks_dmg1">(Dmg)</label>
+								<label for="attacks_weapon1_atk">(Atk)</label>
+								<label for="attacks_weapon1_dmg">(Dmg)</label>
 							</li>
 							<li>
 								<input name="attacks_weapon1" id="attacks_weapon1" type="text">
 								(
-								<input name="attacks_atk1" id="attacks_atk1" type="number">
+								<input name="attacks_weapon1_atk" id="attacks_weapon1_atk" type="number" size="3" maxlength="3">
 								)
 								(
-								<input name="attacks_dmg1" id="attacks_dmg1" type="number">
+								<input name="attacks_weapon1_dmg" id="attacks_weapon1_dmg" type="number" size="6" maxlength="6">
 								)
 							</li>
 							<li>
 								<input name="attacks_weapon2" id="attacks_weapon2" type="text">
 								(
-								<input name="attacks_atk2" id="attacks_atk2" type="number">
+								<input name="attacks_weapon2_atk" id="attacks_weapon2_atk" type="number" size="3" maxlength="3">
 								)
 								(
-								<input name="attacks_dmg2" id="attacks_dmg2" type="number">
+								<input name="attacks_weapon2_dmg" id="attacks_weapon2_dmg" type="number" size="6" maxlength="6">
 								)
 							</li>
 							<li>
 								<input name="attacks_weapon3" id="attacks_weapon3" type="text">
 								(
-								<input name="attacks_atk3" id="attacks_atk3" type="number">
+								<input name="attacks_weapon3_atk" id="attacks_weapon3_atk" type="number" size="3" maxlength="3">
 								)
 								(
-								<input name="attacks_dmg3" id="attacks_dmg3" type="number">
+								<input name="attacks_weapon3_dmg" id="attacks_weapon3_dmg" type="number" size="6" maxlength="6">
+								)
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<label for="attacks_spell1">Spell</label>
+								<label for="attacks_spell1_atk">(Atk)</label>
+								<label for="attacks_spell1_dmg">(Dmg)</label>
+							</li>
+							<li>
+								<input name="attacks_spell1" id="attacks_spell1" type="text">
+								(
+								<input name="attacks_spell1_atk" id="attacks_spell1_atk" type="number" size="3" maxlength="3">
+								)
+								(
+								<input name="attacks_spell1_dmg" id="attacks_spell1_dmg" type="number" size="6" maxlength="6">
+								)
+							</li>
+							<li>
+								<input name="attacks_spell2" id="attacks_spell2" type="text">
+								(
+								<input name="attacks_spell2_atk" id="attacks_spell2_atk" type="number" size="3" maxlength="3">
+								)
+								(
+								<input name="attacks_spell2_dmg" id="attacks_spell2_dmg" type="number" size="6" maxlength="6">
+								)
+							</li>
+							<li>
+								<input name="attacks_spell3" id="attacks_spell3" type="text">
+								(
+								<input name="attacks_spell3_atk" id="attacks_spell3_atk" type="number" size="3" maxlength="3">
+								)
+								(
+								<input name="attacks_spell3_dmg" id="attacks_spell3_dmg" type="number" size="6" maxlength="6">
 								)
 							</li>
 						</ul>
 					</fieldset>
 				</section>
 
-				<section>
+				<section id="second">
 					<fieldset id="class_features" class="label_big_crossed">
 						<legend>
 							Class features
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 					<fieldset id="racial_traits" class="label_big_crossed">
 						<legend>
 							Racial traits
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 					<fieldset id="skills" class="label_big_crossed">
 						<legend>
 							Skills
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 				</section>
 
-				<section>
+				<section id="third">
 					<fieldset id="feats" class="label_small_crossed">
 						<legend>
 							Feats
 						</legend>
-					</fieldset>
-					<fieldset id="spell_notes" class="label_small_crossed">
-						<legend>
-							Spell notes
-						</legend>
-					</fieldset>
-					<fieldset id="prepared_spells" class="label_small_crossed">
-						<legend>
-							Prepared spells
-						</legend>
+						<textarea></textarea>
 					</fieldset>
 					<fieldset id="maneuvers" class="label_small_crossed">
 						<legend>
 							Maneuvers
 						</legend>
+						<textarea></textarea>
+					</fieldset>
+					<fieldset id="spell_notes" class="label_small_crossed">
+						<legend>
+							Spell notes
+						</legend>
+						
+						
+						
+					</fieldset>
+					<fieldset id="prepared_spells" class="label_small_crossed">
+						<legend>
+							Prepared spells
+						</legend>
+						<textarea></textarea>
 					</fieldset>
 					<fieldset id="spellbook" class="label_small_crossed">
 						<legend>
 							Spellbook
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 				</section>
 
-				<section>
+				<section id="fourth">
 					<fieldset id="character_notes" class="label_big_crossed">
 						<legend>
 							Additional character notes
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 					<fieldset id="equipment" class="label_big_crossed">
 						<legend>
 							Equipment and treasure
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 					<fieldset id="playtest_notes" class="label_big_crossed">
 						<legend>
 							Playtest notes
 						</legend>
+						<textarea></textarea>
 					</fieldset>
 				</section>
 
