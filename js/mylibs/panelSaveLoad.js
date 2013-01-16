@@ -18,7 +18,7 @@ function save(formule) {
             });
         }
     }
-    alert(jsonObj[1].optionValue);
+
     var jsonAsString = JSON.stringify(jsonObj, null, '\t');
     var base64_data = jsonAsString.toString('base64');
 
